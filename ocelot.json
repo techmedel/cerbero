@@ -1,0 +1,17 @@
+{
+    "ReRoutes": [
+        {
+            "DownstreamPathTemplate": "/api/values/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5000
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/cie/informeGlobal/",
+            "UpstreamHttpMethod": ["Get","Post"]
+        }
+    ],
+    "GlobalConfiguration": { }
+}
