@@ -5,18 +5,6 @@
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5400
-                }
-            ],
-            "UpstreamPathTemplate": "/api/local/cie/informe_global/informe_global_micro_xlsm_upload/",
-            "UpstreamHttpMethod": ["Get"]
-        },
-        {
-            "DownstreamPathTemplate": "/status/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
                     "Host": "172.31.0.166",
                     "Port": 5400
                 }
@@ -35,18 +23,6 @@
             ],
             "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_upload/",
             "UpstreamHttpMethod": ["Get"]
-        },
-        {
-            "DownstreamPathTemplate": "/upload/{monthyearuser}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "localhost",
-                    "Port": 5400
-                }
-            ],
-            "UpstreamPathTemplate": "/api/local/cie/informe_global/informe_global_micro_xlsm_upload/upload/{monthyearuser}",
-            "UpstreamHttpMethod": ["Post"]
         },
         {
             "DownstreamPathTemplate": "/upload/{monthyearuser}",
