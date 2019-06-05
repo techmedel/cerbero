@@ -24,7 +24,7 @@ pipeline {
                 echo 'Deploying....'
                 bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:\"${JOB_NAME}\""
                 bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop site /site.name:\"${JOB_NAME}\""
-                bat "copy /y \"'${WORKSPACE}'/bin/Debug/netcoreapp2.2/publish/*.*\" \"C:/PROYECTOS/${JOB_NAME}\""
+                bat "copy /y \"${WORKSPACE}/bin/Debug/netcoreapp2.2/publish/*.*\" \"C:/PROYECTOS/${JOB_NAME}\""
                 bat "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:\"${JOB_NAME}\""
                 bat "%SYSTEMROOT%/System32/inetsrv/appcmd start site /site.name:\"${JOB_NAME}\""
             }
