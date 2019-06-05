@@ -25,6 +25,7 @@ pipeline {
                 echo 'Deploying....'
                 echo "${JOB_NAME}"
                 echo "${BUILD_TAG}"
+                echo "${JOB_BASE_NAME}"
                 echo "${BRANCH_NAME}"
             }
         }
