@@ -1,5 +1,6 @@
 pipeline {
     agent any
+
     stages {
         stage('Build') {
             steps {
@@ -16,11 +17,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                bat "\"C:/Program Files/dotnet/dotnet.exe\" publish"
             }
         }
         stage('Publish') {
             steps {
                 echo 'Deploying....'
+                echo "${JOB_NAME}"
+                echo "${BUILD_TAG}"
+                echo "${BRANCH_NAME}"
             }
         }
     }
