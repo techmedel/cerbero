@@ -57,6 +57,7 @@ namespace canserbero
             }
 
             //app.UseHttpsRedirection();
+            
             app.UseCors(_crossOrigin);
             app.UseOcelot().Wait();
             app.UseMvc();
