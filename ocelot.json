@@ -1,7 +1,7 @@
 {
     "ReRoutes": [
         {
-            "DownstreamPathTemplate": "/swagger/",
+            "DownstreamPathTemplate": "/status/",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
@@ -13,7 +13,7 @@
             "UpstreamHttpMethod": ["Get"]
         },
         {
-            "DownstreamPathTemplate": "/swagger/",
+            "DownstreamPathTemplate": "/status/",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
