@@ -1,0 +1,95 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Descripcion",
+    "version": "1.0.0",
+    "title": "Canserbero (desarrollo)",
+    "contact": {
+      "email": "nmartinezh_ext@cnsf.gob.mx"
+    }
+  },
+  "host": "cnsfdesprorr:5100",
+  "basePath": "/api/desarrollo",
+  "tags": [
+    {
+      "name": "informe_global_archivos",
+      "description": "api de Informe global para la manipulacion de archivos"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/cie/informe_global/informe_global_micro_xlsm_download": {
+      "get": {
+        "tags": [
+          "informe_global_archivos"
+        ],
+        "summary": "",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/cie/informe_global/informe_global_micro_xlsm_download/{anio}": {
+      "get": {
+        "tags": [
+          "informe_global_archivos"
+        ],
+        "summary": "",
+        "description": "",
+        "parameters": [
+          {
+            "name": "anio",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/cie/informe_global/informe_global_micro_xlsm_download/{anio}/{clave}": {
+      "get": {
+        "tags": [
+          "informe_global_archivos"
+        ],
+        "summary": "",
+        "description": "",
+        "parameters": [
+          {
+            "name": "anio",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "clave",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

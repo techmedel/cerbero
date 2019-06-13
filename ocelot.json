@@ -95,6 +95,30 @@
             ],
             "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_download/{anio}",
             "UpstreamHttpMethod": ["Get"]
+        },
+        {
+            "DownstreamPathTemplate": "/getArchivesYears/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "172.31.0.166",
+                    "Port": 5400
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_download",
+            "UpstreamHttpMethod": ["Get"]
+        },
+        {
+            "DownstreamPathTemplate": "/getArchivesYears/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "172.31.0.166",
+                    "Port": 6400
+                }
+            ],
+            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_download",
+            "UpstreamHttpMethod": ["Get"]
         }
     ],
     "GlobalConfiguration": { }
