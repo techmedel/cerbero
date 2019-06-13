@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Http;
 
 namespace canserbero
 {
@@ -30,6 +33,7 @@ namespace canserbero
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddOcelot(Configuration);
+            services.AddSwaggerGen();
             services.AddCors(options =>
             {
                 options.AddPolicy(_crossOrigin,
@@ -57,7 +61,22 @@ namespace canserbero
             }
 
             //app.UseHttpsRedirection();
-            
+
+            app.Map("/swagger/desarrollo/swagger.json", b =>
+            {
+                b.Run(async x =>
+                {
+                    var json = File.ReadAllText("swagger/swagger_desarrollo.json");
+                    await x.Response.WriteAsync(json);
+                });
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/desarrollo/swagger.json", "desarrollo");
+            });
+
             app.UseCors(_crossOrigin);
             app.UseOcelot().Wait();
             app.UseMvc();
