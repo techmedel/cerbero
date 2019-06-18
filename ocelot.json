@@ -6,7 +6,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "172.31.0.166",
-                    "Port": 5400
+                    "Port": 5500
                 }
             ],
             "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_upload/",
@@ -30,7 +30,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "172.31.0.166",
-                    "Port": 5400
+                    "Port": 5500
                 }
             ],
             "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_upload/upload/{monthyearuser}",
@@ -54,7 +54,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "172.31.0.166",
-                    "Port": 5400
+                    "Port": 5500
                 }
             ],
             "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_download/{anio}/{clave}",
@@ -78,7 +78,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "172.31.0.166",
-                    "Port": 5400
+                    "Port": 5500
                 }
             ],
             "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_download/{anio}",
@@ -102,7 +102,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "172.31.0.166",
-                    "Port": 5400
+                    "Port": 5500
                 }
             ],
             "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_download",
@@ -118,6 +118,30 @@
                 }
             ],
             "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_download",
+            "UpstreamHttpMethod": ["Get"]
+        },
+        {
+            "DownstreamPathTemplate": "/getInfoRarByCias/{monthId}/{idCompa}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "172.31.0.166",
+                    "Port": 6400
+                }
+            ],
+            "UpstreamPathTemplate": "/api/produccion/cie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}",
+            "UpstreamHttpMethod": ["Get"]
+        },
+        {
+            "DownstreamPathTemplate": "/getInfoRarByCias/{monthId}/{idCompa}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "172.31.0.166",
+                    "Port": 5500
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/cie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}",
             "UpstreamHttpMethod": ["Get"]
         }
     ],
