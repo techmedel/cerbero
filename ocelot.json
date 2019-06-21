@@ -143,6 +143,30 @@
             ],
             "UpstreamPathTemplate": "/api/desarrollo/cie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}",
             "UpstreamHttpMethod": ["Get"]
+        },
+        {
+            "DownstreamPathTemplate": "/login",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "172.31.0.166",
+                    "Port": 6400
+                }
+            ],
+            "UpstreamPathTemplate": "/api/produccion/account/login",
+            "UpstreamHttpMethod": ["Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/login",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "172.31.0.166",
+                    "Port": 5500
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/account/login",
+            "UpstreamHttpMethod": ["Post"]
         }
     ],
     "GlobalConfiguration": { }
