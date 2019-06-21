@@ -157,7 +157,7 @@
             "UpstreamHttpMethod": ["Post"]
         },
         {
-            "DownstreamPathTemplate": "/glogin",
+            "DownstreamPathTemplate": "/login",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
