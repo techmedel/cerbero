@@ -54,11 +54,19 @@ namespace canserbero
 
             //app.UseHttpsRedirection();
 
-            app.Map("/swagger/desarrollo/swagger.json", b =>
+            app.Map("/swagger/Produccion/swagger.json", b =>
             {
                 b.Run(async x =>
                 {
-                    var json = File.ReadAllText("swagger/swagger_desarrollo.json");
+                    var json = File.ReadAllText("swagger/swaggerprod.json");
+                    await x.Response.WriteAsync(json);
+                });
+            });
+            app.Map("/swagger/Desarrollo/swagger.json", b =>
+            {
+                b.Run(async x =>
+                {
+                    var json = File.ReadAllText("swagger/swaggerdes.json");
                     await x.Response.WriteAsync(json);
                 });
             });
@@ -66,7 +74,8 @@ namespace canserbero
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/desarrollo/swagger.json", "desarrollo");
+                c.SwaggerEndpoint("/swagger/Produccion/swagger.json", "Produccion");
+                c.SwaggerEndpoint("/swagger/Desarrollo/swagger.json", "Desarrollo");
             });
 
             app.UseCors(_crossOrigin);

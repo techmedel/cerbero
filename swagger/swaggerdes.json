@@ -1,0 +1,202 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Canserbero API",
+      "contact": {
+        "email": "nmartinezh_ext@cnsf.gob.mx"
+      }
+    },
+    "host": "cnsfdesprorr:6100",
+    "basePath": "/api/desarrollo",
+    "tags": [
+      {
+        "name": "Accounts",
+        "description": "Permite acceder a diferentes servicios de gestion de usuarios"
+      },
+      {
+        "name": "reporte_atencion_regulatoria",
+        "description": "Permite acceder a diferentes servicios de gestion de companias para el rar"
+      },
+      {
+        "name": "informe_global",
+        "description": "Permite acceder a diferentes servicios de gestion de companias para informe global"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/account/login": {
+        "post": {
+          "tags": [
+            "Accounts"
+          ],
+          "summary": "Login to Active Directory",
+          "description": "permite logearte ante el director activo y retorna los diferentes permisos de escritura/lectura. Depende del microservicio cienixpy",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Nesecita de un arreglo con un valor de usuario (username) y otro con la contraseña (password)",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/loginModel"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/cie/informe_global/informe_global_micro_xlsm_download": {
+        "get": {
+          "tags": [
+            "informe_global"
+          ],
+          "summary": "get archives",
+          "description": "Obtiene el listado de años disponibles para descargar archivos de informe global. Depende del microservicio cienixpy",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/cie/informe_global/informe_global_micro_xlsm_download/{anio}": {
+        "get": {
+          "tags": [
+            "informe_global"
+          ],
+          "summary": "get archives by year",
+          "description": "Obtiene el listado de años disponibles para descargar archivos de informe global. Depende del microservicio cienixpy",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "anio",
+              "in": "path",
+              "description": "año que se desea consultar",
+              "required": true,
+              "type": "integer",
+              "format": "int64"
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/cie/informe_global/informe_global_micro_xlsm_download/{anio}/{clave_monthid}": {
+        "get": {
+          "tags": [
+            "informe_global"
+          ],
+          "summary": "get pdf",
+          "description": "Obtiene el archivo del informe global",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/pdf"
+          ],
+          "parameters": [
+            {
+              "name": "anio",
+              "in": "path",
+              "description": "Recupera yy visualiza el archivo",
+              "required": true,
+              "type": "integer",
+              "format": "int64"
+            },
+            {
+              "name": "clave_monthid",
+              "in": "path",
+              "description": "clave de compania y monthId separados por un _",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/cie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}": {
+        "get": {
+          "tags": [
+            "reporte_atencion_regulatoria"
+          ],
+          "summary": "get summary",
+          "description": "obtiene el sreumen de las companias en su periodo elegido",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "monthId",
+              "in": "path",
+              "description": "periodo que se desea consultar",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "idCompa",
+              "in": "path",
+              "description": "clave de compania",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "loginModel": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "Tag"
+        }
+      }
+    }
+  }
+  
