@@ -167,6 +167,22 @@
             ],
             "UpstreamPathTemplate": "/api/desarrollo/account/login",
             "UpstreamHttpMethod": ["Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/account/V1/LoginWithActiveDirectory",
+            "DownstreamScheme": "http",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5000
+                }
+            ],
+            "UpstreamPathTemplate": "/LoginWithActiveDirectory/",
+            "UpstreamHttpMethod": ["Post"]
         }
     ],
     "GlobalConfiguration": { }
