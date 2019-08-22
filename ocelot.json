@@ -171,17 +171,29 @@
         {
             "DownstreamPathTemplate": "/api/account/V1/LoginWithActiveDirectory",
             "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "172.31.0.166",
+                    "Port": 6200
+                }
+            ],
+            "UpstreamPathTemplate": "/api/produccion/account/LoginWithActiveDirectory/",
+            "UpstreamHttpMethod": ["Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/account/V1/LoginWithActiveDirectory",
+            "DownstreamScheme": "http",
             "AuthenticationOptions": {
                 "AuthenticationProviderKey": "Bearer",
                 "AllowedScopes": []
             },
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5000
+                    "Host": "172.31.0.166",
+                    "Port": 5200
                 }
             ],
-            "UpstreamPathTemplate": "/LoginWithActiveDirectory/",
+            "UpstreamPathTemplate": "/api/desarrollo/account/LoginWithActiveDirectory/",
             "UpstreamHttpMethod": ["Post"]
         }
     ],
