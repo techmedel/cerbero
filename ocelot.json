@@ -183,6 +183,10 @@
         {
             "DownstreamPathTemplate": "/api/account/V1/LoginWithActiveDirectory",
             "DownstreamScheme": "http",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
             "DownstreamHostAndPorts": [
                 {
                     "Host": "172.31.0.166",
