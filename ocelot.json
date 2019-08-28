@@ -1,39 +1,91 @@
 {
     "ReRoutes": [
         {
-            "DownstreamPathTemplate": "/status/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "172.31.0.166",
-                    "Port": 5500
-                }
-            ],
-            "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_upload/",
-            "UpstreamHttpMethod": ["Get"]
-        },
-        {
-            "DownstreamPathTemplate": "/status/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "172.31.0.166",
-                    "Port": 6500
-                }
-            ],
-            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_upload/",
-            "UpstreamHttpMethod": ["Get"]
-        },
-        {
             "DownstreamPathTemplate": "/upload/{monthyearuser}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "172.31.0.166",
-                    "Port": 5500
+                    "Host": "cnsfdesmic2",
+                    "Port": 8084
                 }
             ],
-            "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_upload/upload/{monthyearuser}",
+            "UpstreamPathTemplate": "/api/desarrollo/sie/informe_global/carga_masiva_pilares/{monthyearuser}",
+            "UpstreamHttpMethod": ["Post"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/download/{anio}/{clave}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "cnsfdesmic2",
+                    "Port": 8084
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/sie/informe_global/archivos_pilares/{anio}/{clave}",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/getArchives/{anio}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "cnsfdesmic2",
+                    "Port": 8084
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/sie/informe_global/archivos_pilares/{anio}",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/getArchivesYears/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "cnsfdesmic2",
+                    "Port": 8084
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/sie/informe_global/archivos_pilares",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/getInfoRarByCias/{monthId}/{idCompa}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "cnsfdesmic2",
+                    "Port": 8084
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/sie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}",
+            "UpstreamHttpMethod": ["Get"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/desarrollo/account/V1/LoginWithActiveDirectory",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "cnsfdesmic2",
+                    "Port": 8083
+                }
+            ],
+            "UpstreamPathTemplate": "/api/desarrollo/account/LoginWithActiveDirectory/",
             "UpstreamHttpMethod": ["Post"]
         },
         {
@@ -45,20 +97,12 @@
                     "Port": 6500
                 }
             ],
-            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_upload/upload/{monthyearuser}",
-            "UpstreamHttpMethod": ["Post"]
-        },
-        {
-            "DownstreamPathTemplate": "/download/{anio}/{clave}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "172.31.0.166",
-                    "Port": 5500
-                }
-            ],
-            "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_download/{anio}/{clave}",
-            "UpstreamHttpMethod": ["Get"]
+            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/carga_masiva_pilares/{monthyearuser}",
+            "UpstreamHttpMethod": ["Post"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "DownstreamPathTemplate": "/download/{anio}/{clave}",
@@ -69,19 +113,7 @@
                     "Port": 6500
                 }
             ],
-            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_download/{anio}/{clave}",
-            "UpstreamHttpMethod": ["Get"]
-        },
-        {
-            "DownstreamPathTemplate": "/getArchives/{anio}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "172.31.0.166",
-                    "Port": 5500
-                }
-            ],
-            "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_download/{anio}",
+            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/archivos_pilares/{anio}/{clave}",
             "UpstreamHttpMethod": ["Get"]
         },
         {
@@ -93,20 +125,12 @@
                     "Port": 6500
                 }
             ],
-            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_download/{anio}",
-            "UpstreamHttpMethod": ["Get"]
-        },
-        {
-            "DownstreamPathTemplate": "/getArchivesYears/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "172.31.0.166",
-                    "Port": 5500
-                }
-            ],
-            "UpstreamPathTemplate": "/api/desarrollo/cie/informe_global/informe_global_micro_xlsm_download",
-            "UpstreamHttpMethod": ["Get"]
+            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/archivos_pilares/{anio}",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "DownstreamPathTemplate": "/getArchivesYears/",
@@ -117,7 +141,7 @@
                     "Port": 6500
                 }
             ],
-            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/informe_global_micro_xlsm_download",
+            "UpstreamPathTemplate": "/api/produccion/cie/informe_global/archivos_pilares",
             "UpstreamHttpMethod": ["Get"]
         },
         {
@@ -130,19 +154,11 @@
                 }
             ],
             "UpstreamPathTemplate": "/api/produccion/cie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}",
-            "UpstreamHttpMethod": ["Get"]
-        },
-        {
-            "DownstreamPathTemplate": "/getInfoRarByCias/{monthId}/{idCompa}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "172.31.0.166",
-                    "Port": 5500
-                }
-            ],
-            "UpstreamPathTemplate": "/api/desarrollo/cie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}",
-            "UpstreamHttpMethod": ["Get"]
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "DownstreamPathTemplate": "/login",
@@ -157,19 +173,7 @@
             "UpstreamHttpMethod": ["Post"]
         },
         {
-            "DownstreamPathTemplate": "/login",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "172.31.0.166",
-                    "Port": 5500
-                }
-            ],
-            "UpstreamPathTemplate": "/api/desarrollo/account/login",
-            "UpstreamHttpMethod": ["Post"]
-        },
-        {
-            "DownstreamPathTemplate": "/api/account/V1/LoginWithActiveDirectory",
+            "DownstreamPathTemplate": "/api/produccion/account/V1/LoginWithActiveDirectory",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
@@ -178,22 +182,6 @@
                 }
             ],
             "UpstreamPathTemplate": "/api/produccion/account/LoginWithActiveDirectory/",
-            "UpstreamHttpMethod": ["Post"]
-        },
-        {
-            "DownstreamPathTemplate": "/api/account/V1/LoginWithActiveDirectory",
-            "DownstreamScheme": "http",
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "Bearer",
-                "AllowedScopes": []
-            },
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "172.31.0.166",
-                    "Port": 5200
-                }
-            ],
-            "UpstreamPathTemplate": "/api/desarrollo/account/LoginWithActiveDirectory/",
             "UpstreamHttpMethod": ["Post"]
         }
     ],
