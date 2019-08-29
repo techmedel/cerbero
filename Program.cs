@@ -23,7 +23,7 @@ namespace canserbero
            WebHost.CreateDefaultBuilder(args)
                .ConfigureAppConfiguration((host, config) =>
                {
-                   config.AddJsonFile("ocelot.json");
+                   config.AddJsonFile($"ocelot/ocelot_{Environment.GetEnvironmentVariable("ENVIRONMENT_OCELOT")}.json");
                })
                .UseStartup<Startup>();
     }
