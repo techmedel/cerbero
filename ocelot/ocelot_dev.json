@@ -9,7 +9,7 @@
                     "Port": 8084
                 }
             ],
-            "UpstreamPathTemplate": "/api/desarrollo/sie/informe_global/carga_masiva_pilares/{monthyearuser}",
+            "UpstreamPathTemplate": "/api/sie/informe_global/carga_masiva_pilares/{monthyearuser}",
             "UpstreamHttpMethod": ["Post"]
         },
         {
@@ -21,7 +21,7 @@
                     "Port": 8084
                 }
             ],
-            "UpstreamPathTemplate": "/api/desarrollo/sie/informe_global/archivos_pilares/{anio}/{clave}",
+            "UpstreamPathTemplate": "/api/sie/informe_global/archivos_pilares/{anio}/{clave}",
             "UpstreamHttpMethod": ["Get"]
         },
         {
@@ -33,7 +33,7 @@
                     "Port": 8084
                 }
             ],
-            "UpstreamPathTemplate": "/api/desarrollo/sie/informe_global/archivos_pilares/{anio}",
+            "UpstreamPathTemplate": "/api/sie/informe_global/archivos_pilares/{anio}",
             "UpstreamHttpMethod": ["Get"]
         },
         {
@@ -45,7 +45,7 @@
                     "Port": 8084
                 }
             ],
-            "UpstreamPathTemplate": "/api/desarrollo/sie/informe_global/archivos_pilares",
+            "UpstreamPathTemplate": "/api/sie/informe_global/archivos_pilares",
             "UpstreamHttpMethod": ["Get"]
         },
         {
@@ -57,11 +57,11 @@
                     "Port": 8084
                 }
             ],
-            "UpstreamPathTemplate": "/api/desarrollo/sie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}",
+            "UpstreamPathTemplate": "/api/sie/reporte_atencion_regulatoria/getInfoRarByCias/{monthId}/{idCompa}",
             "UpstreamHttpMethod": ["Get"]
         },
         {
-            "DownstreamPathTemplate": "/api/desarrollo/account/V1/LoginWithActiveDirectory",
+            "DownstreamPathTemplate": "/api/account/V1/LoginWithActiveDirectory",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
@@ -69,7 +69,7 @@
                     "Port": 8083
                 }
             ],
-            "UpstreamPathTemplate": "/api/desarrollo/account/LoginWithActiveDirectory/",
+            "UpstreamPathTemplate": "/api/account/LoginWithActiveDirectory/",
             "UpstreamHttpMethod": ["Post"]
         }
     ],
