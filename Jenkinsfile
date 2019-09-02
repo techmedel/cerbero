@@ -22,10 +22,9 @@ pipeline {
         stage('Publish') {
             steps {
                 echo 'Deploying....'
-                bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:\"${JOB_NAME}\""
-                bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop site /site.name:\"${JOB_NAME}\""
+
                 bat "del \"${WORKSPACE}\\bin\\Debug\\netcoreapp2.2\\publish\\web.config"
-                bat "xcopy \"${WORKSPACE}\\src\\bin\\Debug\\netcoreapp2.2\\publish\\*.*\" \"C:/proyectos/${JOB_NAME}\" /O /X /E /H /K /Y"
+                bat "xcopy \"${WORKSPACE}\\src\\bin\\Debug\\netcoreapp2.2\\publish\" \"C:/proyectos/${JOB_NAME}\" /O /X /E /H /K /Y"
                 bat "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:\"${JOB_NAME}\""
                 bat "%SYSTEMROOT%/System32/inetsrv/appcmd start site /site.name:\"${JOB_NAME}\""
             }
