@@ -29,5 +29,10 @@ pipeline {
                 bat "%SYSTEMROOT%/System32/inetsrv/appcmd start site /site.name:\"${JOB_NAME}\""
             }
         }
+        stage('Notification') {
+            steps {
+                slackSend message: "Se ah actualizado \"${JOB_NAME}\""
+            }
+        }
     }
 }
