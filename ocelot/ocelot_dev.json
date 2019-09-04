@@ -61,6 +61,18 @@
             "UpstreamHttpMethod": ["Get"]
         },
         {
+            "DownstreamPathTemplate": "/login",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "172.31.0.177",
+                    "Port": 8084
+                }
+            ],
+            "UpstreamPathTemplate": "/api/account/Login",
+            "UpstreamHttpMethod": ["Post"]
+        },
+        {
             "DownstreamPathTemplate": "/api/account/V1/LoginWithActiveDirectory",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
