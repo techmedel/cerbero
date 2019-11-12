@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
-namespace canserbero
+namespace cerbero
 {
     public class Program
     {
@@ -23,7 +23,7 @@ namespace canserbero
            WebHost.CreateDefaultBuilder(args)
                .ConfigureAppConfiguration((host, config) =>
                {
-                   config.AddJsonFile($"ocelot/ocelot_{Environment.GetEnvironmentVariable("ENVIRONMENT_OCELOT")}.json");
+                   config.AddJsonFile("ocelot.json");
                })
                .UseStartup<Startup>();
     }

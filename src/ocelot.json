@@ -1,0 +1,17 @@
+{
+    "ReRoutes": [
+        {
+            "DownstreamPathTemplate": "/api/Account/V1/GetStatusSession",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "167.172.216.50",
+                    "port": "81"
+                }
+            ],
+            "UpstreamPathTemplate": "/users",
+            "UpstreamHttpMethod": ["GET"]
+        }
+    ],
+    "GlobalConfiguration": { }
+}
