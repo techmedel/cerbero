@@ -23,7 +23,7 @@ namespace cerbero
            WebHost.CreateDefaultBuilder(args)
                .ConfigureAppConfiguration((host, config) =>
                {
-                   config.AddJsonFile("ocelot.json");
+                   config.AddJsonFile("ocelot/ocelot.json");
                })
                .UseStartup<Startup>();
     }
