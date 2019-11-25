@@ -1,31 +1,6 @@
 {
     "ReRoutes": [
-        {
-            "__comment": "SISTEMA DE AUTENTIFICACION GLOBAL",
-            "DownstreamPathTemplate": "/api/{everything}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "167.172.216.50",
-                    "port": "81"
-                }
-            ],
-            "UpstreamPathTemplate": "/sag/{everything}",
-            "UpstreamHttpMethod": ["GET","POST","PUT","OPTIONS","DELETE"]
-        },
-        {
-            "__comment": "SISTEMA METRICAS MAYORITARIO",
-            "DownstreamPathTemplate": "/{everything}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "167.172.216.50",
-                    "port": "83"
-                }
-            ],
-            "UpstreamPathTemplate": "/smu/{everything}",
-            "UpstreamHttpMethod": ["GET","POST","PUT","OPTIONS","DELETE"]
-        }
+
     ],
     "GlobalConfiguration": { }
 }
